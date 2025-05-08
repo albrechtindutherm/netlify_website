@@ -1,72 +1,180 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/shared.css';
 ---
+
 <Layout title="Services" activeNav="services">
     <section class="hero">
-    <div class="container">
-        <h2>Design for Tailor Made Boiler Systems</h2>
-        <p>Comprehensive engineering services for industrial applications</p>
-    </div>
-</section>
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>Design for Tailor Made Boiler Systems</p>
+        </div>
+    </section>
 
     <section class="services">
         <div class="container">
-            <h2>Our Services</h2>
-
             <div class="service-group">
                 <h3>Project Development</h3>
-                <ul>
-                    <li>Concept engineering & feasibility studies</li>
-                    <li>Consulting</li>
-                    <li>Tenders and inquiry documentation</li>
+                <ul class="service-list">
+                    <li><span class="bullet"></span>Concept engineering & feasibility studies</li>
+                    <li><span class="bullet"></span>Consulting</li>
+                    <li><span class="bullet"></span>Tenders and inquiry documentation</li>
                 </ul>
-                <img src="/src/assets/image3.png" alt="Service Image 2" class="floating-image" />
+                <img src="/assets/image3.png" alt="Service Image 2" class="floating-image" />
             </div>
 
             <div class="service-group">
                 <h3>Basic + Detail Boiler Engineering</h3>
-                <ul>
-                    <li>Calculations and process design</li>
-                    <li>Thermal calculations</li>
-                    <li>Water/steam re-circulation calculations</li>
-                    <li>CFD studies</li>
-                    <li>Basic layout drawings</li>
-                    <li>Flow and P&I diagrams</li>
-                    <li>Strength calculation for pressure parts</li>
+                <ul class="service-list">
+                    <li><span class="bullet"></span>Calculations and process design</li>
+                    <li><span class="bullet"></span>Thermal calculations</li>
+                    <li><span class="bullet"></span>Water/steam re-circulation calculations</li>
+                    <li><span class="bullet"></span>CFD studies</li>
+                    <li><span class="bullet"></span>Basic layout drawings</li>
+                    <li><span class="bullet"></span>Flow and P&I diagrams</li>
+                    <li><span class="bullet"></span>Strength calculation for pressure parts</li>
                 </ul>
-                <img src="/src/assets/merged.png" alt="Service Image" class="bottom-right-image" />
+                <img src="/assets/merged.png" alt="Service Image" class="bottom-right-image" />
             </div>
 
             <div class="service-group">
                 <h3>Partner Services</h3>
-                <ul>
-                    <li>Plant design, Piping - with partner</li>
-                    <li>Steel structure - with partner</li>
+                <ul class="service-list">
+                    <li><span class="bullet"></span>Plant design, Piping - with partner</li>
+                    <li><span class="bullet"></span>Steel structure - with partner</li>
                 </ul>
             </div>
         </div>
     </section>
 </Layout>
-
 <style>
+    /* Base styling */
+.services {
+    padding: 2rem 0;
+}
 
+.section-title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Service groups */
+.service-group {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-right: 220px; /* Make space for the floating image */
+}
+
+.service-group h3 {
+    margin-bottom: 1rem;
+    color: #0077cc;
+}
+
+/* Improved bullet points */
+.service-list {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Custom bullet point */
+.bullet {
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    background-color: #0077cc;
+    border-radius: 50%;
+}
+
+/* Image positioning */
 .floating-image {
     position: absolute;
-    top: 230px; /* Adjusted to make bottom-left corner touch hero-image */
-    right: 280px; /* Adjusted to align top-right corner */
+    top: 0;
+    right: 0;
     width: 180px;
-    height: auto;
-    border-radius: 8px;
-    z-index: 2; /* Below hero-image */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .bottom-right-image {
     position: absolute;
-    top: 430px; /* Adjusted to make bottom-left corner touch floating-image */
-    right: 480px; /* Adjusted to align top-right corner */
-    width: 220px;
-    height: auto;
-    border-radius: 8px;
-    z-index: 1; /* Below both images */
+    top: 0;
+    right: 0;
+    width: 200px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+@media (max-width: 768px) {
+    .service-group {
+        padding-right: 0;
+    }
+
+    .floating-image, .bottom-right-image {
+        position: static;
+        margin: 1rem 0;
+        max-width: 100%;
+        height: auto;
+    }
+}
+    /* Improved bullet points */
+    .service-list {
+        list-style: none;
+        padding-left: 0.5rem;
+    }
+
+    .service-list li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    /* Custom bullet point */
+    .bullet {
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background-color: #0077cc;
+        border-radius: 50%;
+    }
+
+    /* Image positioning */
+.floating-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bottom-right-image {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: 200px; /* Move it left from the right edge */
+    width: 200px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+    @media (max-width: 768px) {
+        .floating-image, .bottom-right-image {
+            position: static;
+            margin: 1rem 0;
+            max-width: 100%;
+            height: auto;
+        }
+    }
 </style>
