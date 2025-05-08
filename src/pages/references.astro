@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="container">
             <h2>Recent Projects (2022-2024)</h2>
             <p>Boiler design for more than 20 boiler plants for the international market</p>
-            
+
             <div class="reference-list">
                 <h3>Product Lines of Recent References</h3>
                 <ul>
@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
             <h2>Boiler Design Experience of Albrecht Indutherm Engineers</h2>
             <p>Boiler design experience for more than 20 years</p>
             <p>Design on approximately 40 boiler systems for:</p>
-            
+
             <ul class="experience-list">
                 <li>Water tube boilers; natural and forced circulation</li>
                 <li>Ammonia oxidation reactors/boilers</li>
@@ -49,10 +49,10 @@ import Layout from '../layouts/Layout.astro';
     <section class="reference-images">
         <div class="container">
             <div class="image-row">
-                <img src="/src/assets/image12.png" alt="Reference Image 12" class="reference-image" />
-                <img src="/src/assets/image13.png" alt="Reference Image 13" class="reference-image" />
-                <img src="/src/assets/image14.png" alt="Reference Image 14" class="reference-image" />
-                <img src="/src/assets/image15.png" alt="Reference Image 15" class="reference-image" />
+                <img src="/public/assets/image12.png" alt="Reference Image 12" class="reference-image" />
+                <img src="/public/assets/image13.png" alt="Reference Image 13" class="reference-image" />
+                <img src="/public/assets/image14.png" alt="Reference Image 14" class="reference-image" />
+                <img src="/public/assets/image15.png" alt="Reference Image 15" class="reference-image" />
             </div>
         </div>
     </section>
@@ -73,8 +73,32 @@ import Layout from '../layouts/Layout.astro';
 .reference-image {
     width: 150px;
     height: auto;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bullet point styling from services.astro */
+ul {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    background-color: #0077cc;
+    border-radius: 50%;
 }
 
 /* Responsive Design */

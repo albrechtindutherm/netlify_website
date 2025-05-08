@@ -3,32 +3,32 @@ import Layout from '../layouts/Layout.astro';
 
 const products = [
     {
-        image: '/src/assets/image6.png',
+        image: "/assets/image6.png",
         title: 'Reactors/Boilers for Nitric Acid Plants',
-        description: '- For all licensors',
+        description: 'For all licensors',
     },
     {
-        image: '/src/assets/image7.jpeg',
+        image: "/assets/image7.jpeg",
         title: 'Boilers Downstream Grate Systems',
-        description: '- Vertical and horizontal design',
+        description: 'Vertical and horizontal design',
     },
     {
-        image: '/src/assets/image8.png',
+        image: "/assets/image8.png",
         title: 'Non-ferrous Waste Heat Boilers',
-        description: '- For IsaSmelt-, Flashsmelt-, Ausmelt- process and other processes',
+        description: 'For IsaSmelt-, Flashsmelt-, Ausmelt- process and other processes',
     },
     {
-        image: '/src/assets/image9.png',
+        image: "/assets/image9.png",
         title: 'Boilers Downstream Gas Turbines HRSG',
         description: '',
     },
     {
-        image: '/src/assets/image10.png',
+        image: "/assets/image10.png",
         title: 'Boilers for Sulfuric Acid Plants',
-        description: '- Water tube and smoke tube type',
+        description: 'Water tube and smoke tube type',
     },
     {
-        image: '/src/assets/image11.png',
+        image: "/assets/image11.png",
         title: 'Smoke Tube Boiler Downstream an Incinerator',
         description: '',
     },
@@ -138,14 +138,13 @@ const products = [
 
 <style>
     /* Single consolidated style block */
-    .carousel {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-        overflow: hidden;
-        min-height: 500px;
-    }
-
+  .carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    min-height: 500px;
+}
     .carousel-container {
         display: flex;
         flex-direction: column;
@@ -164,12 +163,14 @@ const products = [
     }
 
     .carousel-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the right */
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 65px; /* Add padding on the left for button space */
+    height: 100%;
+}
 
     .carousel-image {
         width: 200px;
@@ -184,14 +185,24 @@ const products = [
     }
 
     .carousel-buttons {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
-        z-index: 2;
-    }
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.carousel-button.prev {
+    margin-left: 5px;
+}
+
+.carousel-button.next {
+    margin-right: 5px;
+}
 
     .carousel-button {
         background: rgba(0, 0, 0, 0.5);
@@ -223,5 +234,47 @@ const products = [
 
     .indicator.active {
         background: black;
+    }
+
+      ul {
+        list-style: none;
+        padding-left: 0.5rem;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background-color: #0077cc;
+        border-radius: 50%;
+    }
+
+    /* Make product descriptions use the same bullet style */
+    .carousel-description p {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    .carousel-description p:not(:empty)::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background-color: #0077cc;
+        border-radius: 50%;
     }
 </style>
