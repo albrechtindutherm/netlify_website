@@ -3,12 +3,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Services" activeNav="services">
     <section class="hero">
-        <div class="container">
-            <h2>Design for Tailor Made Boiler Systems</h2>
-            <p>Comprehensive engineering services for industrial applications</p>
-            <img src="/src/assets/image2.png" alt="Service Image 1" class="hero-image" />
-        </div>
-    </section>
+    <div class="container">
+        <h2>Design for Tailor Made Boiler Systems</h2>
+        <p>Comprehensive engineering services for industrial applications</p>
+    </div>
+</section>
 
     <section class="services">
         <div class="container">
@@ -50,15 +49,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-.hero-image {
-    position: absolute;
-    top: 30px; /* Top-right position */
-    right: 80px; /* Slightly further from the right */
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
-    z-index: 3; /* Ensure it appears on top */
-}
 
 .floating-image {
     position: absolute;

@@ -47,6 +47,13 @@ const { title, description, activeNav = 'about' } = Astro.props;
             <p>&copy; 2021-<span id="current-year"></span> Albrecht Indutherm GmbH / All rights reserved</p>
             <p>Registered Office: Dortmund | District Court: Amtsgericht Dortmund, HRB 36085 | UID: DE342180980</p>
             <p>Managing Director: Dipl.-Ing. Andreas Albrecht</p>
+            <p class="email-contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <a href="mailto:info@albrecht-indutherm.com">info@albrecht-indutherm.com</a>
+            </p>
         </div>
         <div class="impressum-link">
             <a href="/impressum">Impressum</a>
@@ -55,6 +62,64 @@ const { title, description, activeNav = 'about' } = Astro.props;
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+
+    <style>
+        footer {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    color: #333; /* Adding explicit dark text color */
+}
+
+footer {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    color: #333;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright p {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.email-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.email-contact a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.email-contact a:hover {
+    text-decoration: underline;
+}
+
+.impressum-link {
+    margin-top: 1rem;
+}
+
+.impressum-link a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.impressum-link a:hover {
+    text-decoration: underline;
+}
+    </style>
 </footer>
 </body>
 </html>
