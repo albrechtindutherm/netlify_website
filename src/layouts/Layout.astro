@@ -1,34 +1,59 @@
 ---
-import '../../src/styles/globals.css';
-import '@fontsource-variable/inter/wght.css';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import '../css/styles.css';
 
 interface Props {
-    title: string;
+  title: string;
+  description?: string;
+  activeNav?: 'about' | 'services' | 'products' | 'references' | 'contact';
 }
 
-const { title } = Astro.props;
+const { title, description, activeNav = 'about' } = Astro.props;
+
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
-    </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description || "Albrecht Indutherm - Industrial Boiler Systems"}>
+    <title>{title} - Albrecht Indutherm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">Albrecht Indutherm</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/" class={activeNav === 'about' ? 'active' : ''}>About Us</a></li>
+                    <li><a href="/services" class={activeNav === 'services' ? 'active' : ''}>Services</a></li>
+                    <li><a href="/products" class={activeNav === 'products' ? 'active' : ''}>Products</a></li>
+                    <li><a href="/references" class={activeNav === 'references' ? 'active' : ''}>References</a></li>
+                    <li><a href="/contact" class={activeNav === 'contact' ? 'active' : ''}>Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </body>
+    </header>
+
+    <main>
+        <slot />
+    </main>
+
+    <footer>
+    <div class="container">
+        <div class="copyright">
+            <p>&copy; 2021-<span id="current-year"></span> Albrecht Indutherm GmbH / All rights reserved</p>
+            <p>Registered Office: Dortmund | District Court: Amtsgericht Dortmund, HRB 36085 | UID: DE342180980</p>
+            <p>Managing Director: Dipl.-Ing. Andreas Albrecht</p>
+        </div>
+        <div class="impressum-link">
+            <a href="/impressum">Impressum</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</footer>
+</body>
 </html>

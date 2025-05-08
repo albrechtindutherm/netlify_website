@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact - Albrecht Indutherm">
+    <section class="hero">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="address">
+                <h3>Our Address</h3>
+                <p>Albrecht Indutherm GmbH</p>
+                <p>Robert Schuman-Str. 6</p>
+                <p>44263 Dortmund</p>
+                <p>Germany</p>
+            </div>
+            
+            <div class="contact-person">
+                <h3>Contact Person</h3>
+                <p>Andreas Albrecht</p>
+                <p>Email: <a href="mailto:info@albrecht-indutherm.com">info@albrecht-indutherm.com</a></p>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</Layout>
