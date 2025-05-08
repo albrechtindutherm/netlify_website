@@ -45,4 +45,47 @@ import Layout from '../layouts/Layout.astro';
             </ul>
         </div>
     </section>
+
+    <section class="reference-images">
+        <div class="container">
+            <div class="image-row">
+                <img src="/src/assets/image12.png" alt="Reference Image 12" class="reference-image" />
+                <img src="/src/assets/image13.png" alt="Reference Image 13" class="reference-image" />
+                <img src="/src/assets/image14.png" alt="Reference Image 14" class="reference-image" />
+                <img src="/src/assets/image15.png" alt="Reference Image 15" class="reference-image" />
+            </div>
+        </div>
+    </section>
 </Layout>
+
+<style>
+/* Reference Images Section */
+.reference-images {
+    margin-top: 2rem;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.reference-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .reference-image {
+        width: 100px;
+    }
+}
+</style>

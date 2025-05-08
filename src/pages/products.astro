@@ -1,69 +1,227 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const products = [
+    {
+        image: '/src/assets/image6.png',
+        title: 'Reactors/Boilers for Nitric Acid Plants',
+        description: '- For all licensors',
+    },
+    {
+        image: '/src/assets/image7.jpeg',
+        title: 'Boilers Downstream Grate Systems',
+        description: '- Vertical and horizontal design',
+    },
+    {
+        image: '/src/assets/image8.png',
+        title: 'Non-ferrous Waste Heat Boilers',
+        description: '- For IsaSmelt-, Flashsmelt-, Ausmelt- process and other processes',
+    },
+    {
+        image: '/src/assets/image9.png',
+        title: 'Boilers Downstream Gas Turbines HRSG',
+        description: '',
+    },
+    {
+        image: '/src/assets/image10.png',
+        title: 'Boilers for Sulfuric Acid Plants',
+        description: '- Water tube and smoke tube type',
+    },
+    {
+        image: '/src/assets/image11.png',
+        title: 'Smoke Tube Boiler Downstream an Incinerator',
+        description: '',
+    },
+];
 ---
 
 <Layout title="Products - Albrecht Indutherm" activeNav="products">
-    <section class="hero">
-        <div class="container">
-            <h2>Our Product Portfolio</h2>
-            <p>Specialized boiler systems for various industrial applications</p>
-        </div>
-    </section>
 
-    <section class="products">
-        <div class="container">
-            <div class="product-category">
-                <h3>Non-ferrous Waste Heat Boilers</h3>
-                <p>For IsaSmelt-, Flashsmelt-, Ausmelt- process and other processes</p>
-            </div>
-            
-            <div class="product-category">
-                <h3>Reactors/Boilers for Nitric Acid Plants</h3>
-                <p>For all licensers</p>
-            </div>
-            
-            <div class="product-category">
-                <h3>Boilers Downstream Grate Systems</h3>
-                <p>Vertical and horizontal design</p>
-            </div>
-            
-            <div class="product-category">
-                <h3>Thermal Oxidizers / Incinerators</h3>
-                <p>For liquid and gaseous fuels</p>
-            </div>
-            
-            <div class="product-category">
-                <h3>Boilers for Sulfuric Acid Plants</h3>
-                <p>Water tube and smoke tube type</p>
-            </div>
-            
-            <div class="product-category">
-                <h3>Smoke Tube Boiler Downstream an Incinerator</h3>
+<section class="carousel" client:load>
+    <div class="carousel-container">
+        <!-- First Slide with Specifications -->
+        <div class="carousel-item active" data-index="0">
+            <div class="carousel-content">
+                <div class="carousel-description">
+                    <h2>Typical Boiler Types and Applications</h2>
+                    <div class="spec-group">
+                        <h3>Water Tube Boilers for Natural and Forced Circulations</h3>
+                        <ul>
+                            <li><strong>Capacity:</strong> 5 - 200 t/h</li>
+                            <li><strong>Steam Temperature:</strong> &lt; 500°C</li>
+                            <li><strong>Steam Pressure:</strong> &lt; 120 bar</li>
+                            <li><strong>Design Codes:</strong> PED, ASME, GB, IVR and others</li>
+                        </ul>
+                    </div>
+                    <div class="spec-group">
+                        <h3>Smoke Tube Boilers</h3>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="specifications">
-        <div class="container">
-            <h2>Typical Boiler Types and Applications</h2>
-            
-            <div class="spec-group">
-                <h3>Water Tube Boilers for Natural and Forced Circulations</h3>
-                <ul>
-                    <li><strong>Capacity:</strong> 5 - 200 t/h</li>
-                    <li><strong>Steam Temperature:</strong> <Fragment 500°C</li>
-                    <li><strong>Steam Pressure:</strong> <Fragment 120 bar</li>
-                    <li><strong>Design Codes:</strong> PED, ASME, GB, IVR and others</li>
-                </ul>
+        <!-- Product Slides -->
+        {products.map((product, index) => (
+            <div class="carousel-item" data-index={index + 1}>
+                <div class="carousel-content">
+                    <img src={product.image} alt={product.title} class="carousel-image" />
+                    <div class="carousel-description">
+                        <h3>{product.title}</h3>
+                        <p>{product.description}</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="spec-group">
-                <h3>Smoke Tube Boilers</h3>
-            </div>
-            
-            <div class="spec-group">
-                <h3>Boilers Downstream Gas Turbines HRSG</h3>
-            </div>
-        </div>
-    </section>
-</Layout>
+        ))}
+    </div>
+
+    <!-- Unified navigation controls outside the individual slides -->
+    <div class="carousel-buttons">
+        <button class="carousel-button prev">&#10094;</button>
+        <button class="carousel-button next">&#10095;</button>
+    </div>
+
+    <div class="carousel-indicators">
+        {Array.from({ length: products.length + 1 }).map((_, index) => (
+            <span
+                class={`indicator ${index === 0 ? 'active' : ''}`}
+                data-index={index}
+            ></span>
+        ))}
+    </div>
+</section>
+
+<script client:load>
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const items = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+
+        // Hide all slides and deactivate all indicators
+        items.forEach(item => item.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+
+        // Show current slide and activate current indicator
+        if (items[currentIndex]) items[currentIndex].classList.add('active');
+        if (indicators[currentIndex]) indicators[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+        const items = document.querySelectorAll('.carousel-item');
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        const items = document.querySelectorAll('.carousel-item');
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add event listeners for prev/next buttons
+        document.querySelector('.carousel-button.prev')?.addEventListener('click', prevSlide);
+        document.querySelector('.carousel-button.next')?.addEventListener('click', nextSlide);
+
+        // Add event listeners for indicators
+        document.querySelectorAll('.indicator').forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                currentIndex = parseInt(indicator.getAttribute('data-index') || '0');
+                updateCarousel();
+            });
+        });
+
+        // Initial setup
+        updateCarousel();
+    });
+</script>
+
+<style>
+    /* Single consolidated style block */
+    .carousel {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        min-height: 500px;
+    }
+
+    .carousel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+        display: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .carousel-item.active {
+        display: block;
+    }
+
+    .carousel-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-image {
+        width: 200px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-description {
+        max-width: 400px;
+        text-align: left;
+    }
+
+    .carousel-buttons {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+    }
+
+    .carousel-button {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 2;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+        background: gray;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .indicator.active {
+        background: black;
+    }
+</style>
