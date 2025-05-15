@@ -10,106 +10,311 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <section class="recent-references">
+    <section class="references-content">
         <div class="container">
-            <h2>Recent Projects (2022-2024)</h2>
-            <p>Boiler design for more than 20 boiler plants for the international market</p>
+            <div class="section-intro">
+                <p>With over two decades of experience, our engineering team has delivered innovative and reliable boiler solutions across various industries worldwide.</p>
+            </div>
 
-            <div class="reference-list">
-                <h3>Product Lines of Recent References</h3>
-                <ul>
-                    <li>Ammonia Oxidation reactors/boilers</li>
-                    <li>Non-ferrous boilers</li>
-                    <li>Boiler behind a grate system</li>
-                    <li>Smoke tube boiler for a chemical plant</li>
-                    <li>HRSG – boilers downstream a gas turbine</li>
-                    <li>Several feasibility studies for revamping</li>
+            <div class="reference-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                    </div>
+                    <h2>Recent Projects (2022-2024)</h2>
+                </div>
+                <p>Boiler design for more than 20 boiler plants for the international market</p>
+
+                <div class="reference-list">
+                    <h3>Product Lines of Recent References</h3>
+                    <ul>
+                        <li>Ammonia Oxidation reactors/boilers</li>
+                        <li>Non-ferrous boilers</li>
+                        <li>Boiler behind a grate system</li>
+                        <li>Smoke tube boiler for a chemical plant</li>
+                        <li>HRSG – boilers downstream a gas turbine</li>
+                        <li>Several feasibility studies for revamping</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reference-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </div>
+                    <h2>Boiler Design Experience</h2>
+                </div>
+                <p>Boiler design experience for more than 20 years</p>
+                <p>Design on approximately 40 boiler systems for:</p>
+
+                <ul class="experience-list">
+                    <li>Water tube boilers; natural and forced circulation</li>
+                    <li>Ammonia oxidation reactors/boilers</li>
+                    <li>Sulfuric acid boilers</li>
+                    <li>Boiler for non-ferrous industry</li>
+                    <li>Direct fired boilers; water tube type</li>
+                    <li>Boilers downstream incinerators</li>
                 </ul>
             </div>
-        </div>
-    </section>
 
-    <section class="experience">
-        <div class="container">
-            <h2>Boiler Design Experience of Albrecht Indutherm Engineers</h2>
-            <p>Boiler design experience for more than 20 years</p>
-            <p>Design on approximately 40 boiler systems for:</p>
+            <div class="reference-gallery">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="/assets/image12.png" alt="Reference Image 12" />
+                        <div class="overlay">
+                            <span>Ammonia Oxidation Project</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/assets/image13.png" alt="Reference Image 13" />
+                        <div class="overlay">
+                            <span>Non-ferrous Boiler Design</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/assets/image14.png" alt="Reference Image 14" />
+                        <div class="overlay">
+                            <span>HRSG Installation</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/assets/image15.png" alt="Reference Image 15" />
+                        <div class="overlay">
+                            <span>Chemical Plant Solution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <ul class="experience-list">
-                <li>Water tube boilers; natural and forced circulation</li>
-                <li>Ammonia oxidation reactors/boilers</li>
-                <li>Sulfuric acid boilers</li>
-                <li>Boiler for non-ferrous industry</li>
-                <li>Direct fired boilers; water tube type</li>
-                <li>Boilers downstream incinerators</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="reference-images">
-        <div class="container">
-            <div class="image-row">
-                <img src="/assets/image12.png" alt="Reference Image 12" class="reference-image" />
-                <img src="/assets/image13.png" alt="Reference Image 13" class="reference-image" />
-                <img src="/assets/image14.png" alt="Reference Image 14" class="reference-image" />
-                <img src="/assets/image15.png" alt="Reference Image 15" class="reference-image" />
+            <div class="cta-box">
+                <h3>Ready to Start Your Project?</h3>
+                <p>Leverage our expertise for your next boiler system design</p>
+                <a href="/contact" class="cta-button">Contact Our Engineers</a>
             </div>
         </div>
     </section>
 </Layout>
 
 <style>
-.reference-images {
-    margin-top: 2rem;
-}
-
-
-.image-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.reference-image {
-    width: 150px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Bullet point styling from services.astro */
-ul {
-    list-style: none;
-    padding-left: 0.5rem;
-}
-
-ul li {
-    position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.6rem;
-    width: 6px;
-    height: 6px;
-    background-color: #0077cc;
-    border-radius: 50%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .image-row {
-        flex-wrap: wrap;
-        gap: 0.5rem;
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to right, rgba(0, 40, 85, 0.9), rgba(0, 40, 85, 0.7) 60%, rgba(0, 40, 85, 0.5)),
+                    url('/assets/boiler-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #f5f5f7;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .reference-image {
-        width: 100px;
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
     }
-}
+
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    /* References Content */
+    .references-content {
+        padding: 0 0 4rem;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* Reference Cards */
+    .reference-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid #eaeaea;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .card-icon {
+        color: #0056b3;
+        margin-right: 1rem;
+    }
+
+    .reference-card h2 {
+        color: #0056b3;
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    .reference-card h3 {
+        color: #0056b3;
+        margin: 1.5rem 0 1rem;
+        font-size: 1.4rem;
+    }
+
+    .reference-card p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        color: #444;
+    }
+
+    /* Bullet point styling */
+    ul {
+        list-style: none;
+        padding-left: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background-color: #0077cc;
+        border-radius: 50%;
+    }
+
+    /* Reference Gallery */
+    .reference-gallery {
+        margin: 3rem 0;
+    }
+
+    .reference-gallery h2 {
+        color: #0056b3;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s;
+        aspect-ratio: 4/3;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .gallery-item .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        padding: 1rem;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    /* CTA Box */
+    .cta-box {
+        background: linear-gradient(to right, #0056b3, #0077cc);
+        color: white;
+        padding: 2.5rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        margin-top: 4rem;
+    }
+
+    .cta-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: white;
+        color: #0056b3;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero {
+            padding: 3rem 0;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

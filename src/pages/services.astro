@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Services" activeNav="services">
+<Layout title="Services - Albrecht Indutherm" activeNav="services">
     <section class="hero">
         <div class="container">
             <h2>Our Services</h2>
@@ -12,133 +12,165 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="services">
         <div class="container">
-            <div class="service-group">
-                <h3>Project Development</h3>
-                <ul class="service-list">
-                    <li><span class="bullet"></span>Concept engineering & feasibility studies</li>
-                    <li><span class="bullet"></span>Consulting</li>
-                    <li><span class="bullet"></span>Tenders and inquiry documentation</li>
-                </ul>
-                <img src="/assets/image3.png" alt="Service Image 2" class="floating-image" />
+            <div class="section-intro">
+                <p>We provide comprehensive engineering services for industrial boiler systems with a focus on efficiency and sustainability.</p>
             </div>
 
-            <div class="service-group">
-                <h3>Basic + Detail Boiler Engineering</h3>
-                <ul class="service-list">
-                    <li><span class="bullet"></span>Calculations and process design</li>
-                    <li><span class="bullet"></span>Thermal calculations</li>
-                    <li><span class="bullet"></span>Water/steam re-circulation calculations</li>
-                    <li><span class="bullet"></span>CFD studies</li>
-                    <li><span class="bullet"></span>Basic layout drawings</li>
-                    <li><span class="bullet"></span>Flow and P&I diagrams</li>
-                    <li><span class="bullet"></span>Strength calculation for pressure parts</li>
-                </ul>
-                <img src="/assets/merged.png" alt="Service Image" class="bottom-right-image" />
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <h3>Project Development</h3>
+                    <ul>
+                        <li>Concept engineering & feasibility studies</li>
+                        <li>Consulting</li>
+                        <li>Tenders and inquiry documentation</li>
+                    </ul>
+                    <div class="service-image">
+                        <img src="/assets/image3.png" alt="Project Development" />
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <h3>Basic + Detail Boiler Engineering</h3>
+                    <ul>
+                        <li>Calculations and process design</li>
+                        <li>Thermal calculations</li>
+                        <li>Water/steam re-circulation calculations</li>
+                        <li>CFD studies</li>
+                        <li>Basic layout drawings</li>
+                        <li>Flow and P&I diagrams</li>
+                        <li>Strength calculation for pressure parts</li>
+                    </ul>
+                    <div class="service-image">
+                        <img src="/assets/merged.png" alt="Boiler Engineering" />
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Partner Services</h3>
+                    <ul>
+                        <li>Plant design, Piping - with partner</li>
+                        <li>Steel structure - with partner</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="service-group">
-                <h3>Partner Services</h3>
-                <ul class="service-list">
-                    <li><span class="bullet"></span>Plant design, Piping - with partner</li>
-                    <li><span class="bullet"></span>Steel structure - with partner</li>
-                </ul>
+            <div class="cta-box">
+                <h3>Need Engineering Expertise?</h3>
+                <p>Contact our team of experienced engineers to discuss your project requirements.</p>
+                <a href="/contact" class="cta-button">Get in Touch</a>
             </div>
         </div>
     </section>
 </Layout>
+
 <style>
-    /* Base styling */
-.services {
-    padding: 2rem 0;
-}
-
-.section-title {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-/* Service groups */
-.service-group {
-    position: relative;
-    margin-bottom: 2.5rem;
-    padding-right: 220px; /* Make space for the floating image */
-}
-
-.service-group h3 {
-    margin-bottom: 1rem;
-    color: #0077cc;
-}
-
-/* Improved bullet points */
-.service-list {
-    list-style: none;
-    padding-left: 0.5rem;
-}
-
-.service-list li {
-    position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-/* Custom bullet point */
-.bullet {
-    position: absolute;
-    left: 0;
-    top: 0.6rem;
-    width: 6px;
-    height: 6px;
-    background-color: #0077cc;
-    border-radius: 50%;
-}
-
-/* Image positioning */
-.floating-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 180px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.bottom-right-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-    .service-group {
-        padding-right: 0;
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to right, rgba(0, 40, 85, 0.9), rgba(0, 40, 85, 0.7) 60%, rgba(0, 40, 85, 0.5)),
+                    url('/assets/boiler-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #f5f5f7;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .floating-image, .bottom-right-image {
-        position: static;
-        margin: 1rem 0;
-        max-width: 100%;
-        height: auto;
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
     }
-}
-    /* Improved bullet points */
-    .service-list {
+
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    /* Services Section */
+    .services {
+        padding: 2rem 0 5rem;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .service-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #eaeaea;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+        color: #0056b3;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+        color: #0056b3;
+        margin-bottom: 1.2rem;
+        font-weight: 600;
+        position: relative;
+    }
+
+    .service-card h3::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #0056b3;
+        margin-top: 10px;
+    }
+
+    /* Bullet point styling */
+    ul {
         list-style: none;
         padding-left: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
-    .service-list li {
+    ul li {
         position: relative;
         padding-left: 1.25rem;
         margin-bottom: 0.5rem;
         line-height: 1.5;
     }
 
-    /* Custom bullet point */
-    .bullet {
+    ul li::before {
+        content: "";
         position: absolute;
         left: 0;
         top: 0.6rem;
@@ -148,32 +180,73 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 50%;
     }
 
-    /* Image positioning */
-.floating-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 180px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    /* Service images */
+    .service-image {
+        margin-top: 1.5rem;
+        border-radius: 6px;
+        overflow: hidden;
+    }
 
-.bottom-right-image {
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    right: 200px; /* Move it left from the right edge */
-    width: 200px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    .service-image img {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s;
+        border-radius: 6px;
+    }
 
+    .service-image:hover img {
+        transform: scale(1.03);
+    }
+
+    /* CTA Box */
+    .cta-box {
+        background: linear-gradient(to right, #0056b3, #0077cc);
+        color: white;
+        padding: 2.5rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+    }
+
+    .cta-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: white;
+        color: #0056b3;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive styles */
     @media (max-width: 768px) {
-        .floating-image, .bottom-right-image {
-            position: static;
-            margin: 1rem 0;
-            max-width: 100%;
-            height: auto;
+        .hero {
+            padding: 3rem 0;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .service-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>

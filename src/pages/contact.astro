@@ -10,23 +10,153 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <section class="contact-info">
+    <section class="contact-section">
         <div class="container">
-            <div class="address">
-                <h3>Our Address</h3>
-                <p>Albrecht Indutherm GmbH</p>
-                <p>Robert Schuman-Str. 6</p>
-                <p>44263 Dortmund</p>
-                <p>Germany</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h3>Our Address</h3>
+                    <ul>
+                        <li>Albrecht Indutherm GmbH</li>
+                        <li>Robert Schuman-Str. 6</li>
+                        <li>44263 Dortmund</li>
+                        <li>Germany</li>
+                    </ul>
+                    <div class="map-container">
+                        <a href="https://maps.google.com/?q=Robert+Schuman+Str+6+44263+Dortmund+Germany" target="_blank" rel="noopener noreferrer">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.7636434390814!2d7.507614!3d51.482681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b91902b79f7539%3A0xdfef7b1ab5e1bfad!2sRobert-Schuman-Str.%206%2C%2044263%20Dortmund%2C%20Germany!5e0!3m2!1sen!2sus!4v1689015378383!5m2!1sen!2sus"
+                                width="100%"
+                                height="250"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            <span class="map-overlay">Click to open in Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3>Contact Person</h3>
+                    <ul>
+                        <li>Andreas Albrecht</li>
+                        <li>Email: <a href="mailto:info@albrecht-indutherm.com">info@albrecht-indutherm.com</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="contact-person">
-                <h3>Contact Person</h3>
-                <p>Andreas Albrecht</p>
-                <p>Email: <a href="mailto:info@albrecht-indutherm.com">info@albrecht-indutherm.com</a></p>
-            </div>
-
-
+        </div>
     </section>
 </Layout>
 
+<style>
+    .hero {
+        background-color: #0056b3;
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-section {
+        padding: 2rem 0 4rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        border: 1px solid #eaeaea;
+    }
+
+    .contact-icon {
+        color: #0056b3;
+        margin-bottom: 1rem;
+    }
+
+    .contact-card h3 {
+        margin-bottom: 1rem;
+        color: #0056b3;
+        font-weight: 600;
+    }
+
+    /* Bullet point styling */
+    ul {
+        list-style: none;
+        padding-left: 0.5rem;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background-color: #0077cc;
+        border-radius: 50%;
+    }
+
+    /* Map styling */
+    .map-container {
+        position: relative;
+        margin-top: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+        display: block;
+    }
+
+    .map-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 86, 179, 0.8);
+        color: white;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .map-container:hover .map-overlay {
+        opacity: 1;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

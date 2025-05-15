@@ -18,7 +18,7 @@ const products = [
         description: 'For IsaSmelt-, Flashsmelt-, Ausmelt- process and other processes',
     },
     {
-        image: "/assets/image9.png",
+        image: "/assets/image8.png",
         title: 'Boilers Downstream Gas Turbines HRSG',
         description: '',
     },
@@ -36,59 +36,92 @@ const products = [
 ---
 
 <Layout title="Products - Albrecht Indutherm" activeNav="products">
+    <section class="hero">
+        <div class="container">
+            <h2>Our Products</h2>
+            <p>Innovative Boiler Systems for Industrial Applications</p>
+        </div>
+    </section>
 
-<section class="carousel" client:load>
-    <div class="carousel-container">
-        <!-- First Slide with Specifications -->
-        <div class="carousel-item active" data-index="0">
-            <div class="carousel-content">
-                <div class="carousel-description">
-                    <h2>Typical Boiler Types and Applications</h2>
-                    <div class="spec-group">
-                        <h3>Water Tube Boilers for Natural and Forced Circulations</h3>
-                        <ul>
-                            <li><strong>Capacity:</strong> 5 - 200 t/h</li>
-                            <li><strong>Steam Temperature:</strong> &lt; 500°C</li>
-                            <li><strong>Steam Pressure:</strong> &lt; 120 bar</li>
-                            <li><strong>Design Codes:</strong> PED, ASME, GB, IVR and others</li>
-                        </ul>
+    <section class="products-section">
+        <div class="container">
+            <div class="section-intro">
+                <p>We design and engineer a comprehensive range of industrial boiler systems tailored to your specific requirements.</p>
+            </div>
+
+            <div class="carousel" client:load>
+                <div class="carousel-container">
+                    <!-- First Slide with Specifications -->
+                    <div class="carousel-item active" data-index="0">
+                        <div class="carousel-content">
+                            <div class="specs-card">
+                                <div class="specs-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"></path><path d="M15 2v5h5"></path></svg>
+                                </div>
+                                <h2>Typical Boiler Types and Applications</h2>
+                                <div class="spec-group">
+                                    <h3>Water Tube Boilers for Natural and Forced Circulations</h3>
+                                    <ul>
+                                        <li><strong>Capacity:</strong> 5 - 200 t/h</li>
+                                        <li><strong>Steam Temperature:</strong> &lt; 500°C</li>
+                                        <li><strong>Steam Pressure:</strong> &lt; 120 bar</li>
+                                        <li><strong>Design Codes:</strong> PED, ASME, GB, IVR and others</li>
+                                    </ul>
+                                </div>
+                                <div class="spec-group">
+                                    <h3>Smoke Tube Boilers</h3>
+                                    <p>Custom-engineered for industrial applications</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="spec-group">
-                        <h3>Smoke Tube Boilers</h3>
-                    </div>
+
+                    <!-- Product Slides -->
+                    {products.map((product, index) => (
+                        <div class="carousel-item" data-index={index + 1}>
+                            <div class="carousel-content">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src={product.image} alt={product.title} />
+                                    </div>
+                                    <div class="product-info">
+                                        <h3>{product.title}</h3>
+                                        <p>{product.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
+
+                <!-- Navigation controls -->
+                <div class="carousel-buttons">
+                    <button class="carousel-button prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="carousel-button next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+
+                <div class="carousel-indicators">
+                    {Array.from({ length: products.length + 1 }).map((_, index) => (
+                        <span
+                            class={`indicator ${index === 0 ? 'active' : ''}`}
+                            data-index={index}
+                        ></span>
+                    ))}
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Find the Perfect Solution for Your Industry</h3>
+                <p>Our engineering team can design custom boiler systems to meet your specific requirements</p>
+                <a href="/contact" class="cta-button">Request a Consultation</a>
             </div>
         </div>
-
-        <!-- Product Slides -->
-        {products.map((product, index) => (
-            <div class="carousel-item" data-index={index + 1}>
-                <div class="carousel-content">
-                    <img src={product.image} alt={product.title} class="carousel-image" />
-                    <div class="carousel-description">
-                        <h3>{product.title}</h3>
-                        <p>{product.description}</p>
-                    </div>
-                </div>
-            </div>
-        ))}
-    </div>
-
-    <!-- Unified navigation controls outside the individual slides -->
-    <div class="carousel-buttons">
-        <button class="carousel-button prev">&#10094;</button>
-        <button class="carousel-button next">&#10095;</button>
-    </div>
-
-    <div class="carousel-indicators">
-        {Array.from({ length: products.length + 1 }).map((_, index) => (
-            <span
-                class={`indicator ${index === 0 ? 'active' : ''}`}
-                data-index={index}
-            ></span>
-        ))}
-    </div>
-</section>
+    </section>
+</Layout>
 
 <script client:load>
     let currentIndex = 0;
@@ -131,30 +164,76 @@ const products = [
             });
         });
 
+        // Auto-rotate slides every 5 seconds
+        const interval = setInterval(nextSlide, 5000);
+
+        // Stop auto-rotation when user interacts
+        document.querySelector('.carousel')?.addEventListener('mouseenter', () => clearInterval(interval));
+
         // Initial setup
         updateCarousel();
     });
 </script>
 
 <style>
-    /* Single consolidated style block */
-  .carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    min-height: 500px;
-}
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to right, rgba(0, 40, 85, 0.9), rgba(0, 40, 85, 0.7) 60%, rgba(0, 40, 85, 0.5)),
+                    url('/assets/boiler-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #f5f5f7;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    /* Products Section */
+    .products-section {
+        padding: 0 0 4rem;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* Carousel Styling */
+    .carousel {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto 4rem;
+        overflow: hidden;
+        min-height: 550px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+
     .carousel-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 
     .carousel-item {
-        flex: 0 0 100%;
         display: none;
-        text-align: center;
+        padding: 2rem;
         width: 100%;
     }
 
@@ -162,55 +241,114 @@ const products = [
         display: block;
     }
 
-    .carousel-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align content to the right */
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 65px; /* Add padding on the left for button space */
-    height: 100%;
-}
-
-    .carousel-image {
-        width: 200px;
-        height: auto;
+    /* Specifications Card */
+    .specs-card {
+        background-color: white;
         border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
     }
 
-    .carousel-description {
-        max-width: 400px;
-        text-align: left;
+    .specs-icon {
+        color: #0056b3;
+        margin-bottom: 1.5rem;
     }
 
+    .specs-card h2 {
+        color: #0056b3;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .spec-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .spec-group h3 {
+        color: #0056b3;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Product Card */
+    .product-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        height: 100%;
+    }
+
+    .product-image {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.05);
+    }
+
+    .product-info {
+        flex: 1;
+    }
+
+    .product-info h3 {
+        color: #0056b3;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .product-info p {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+        color: #444;
+    }
+
+    /* Navigation Controls */
     .carousel-buttons {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 2;
-    transform: translateY(-50%);
-    padding: 0 10px;
-}
-
-.carousel-button.prev {
-    margin-left: 5px;
-}
-
-.carousel-button.next {
-    margin-right: 5px;
-}
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        transform: translateY(-50%);
+        z-index: 5;
+    }
 
     .carousel-button {
-        background: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 86, 179, 0.8);
         color: white;
+        width: 40px;
+        height: 40px;
         border: none;
-        padding: 0.5rem 1rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
-        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .carousel-button:hover {
+        background-color: rgba(0, 86, 179, 1);
+        transform: scale(1.1);
     }
 
     .carousel-indicators {
@@ -221,24 +359,28 @@ const products = [
         display: flex;
         justify-content: center;
         gap: 10px;
-        z-index: 2;
+        z-index: 5;
     }
 
     .indicator {
         width: 10px;
         height: 10px;
-        background: gray;
+        background: rgba(0, 86, 179, 0.3);
         border-radius: 50%;
         cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
     }
 
     .indicator.active {
-        background: black;
+        background: rgba(0, 86, 179, 1);
+        transform: scale(1.3);
     }
 
-      ul {
+    /* Bullet Points Styling */
+    ul {
         list-style: none;
         padding-left: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     ul li {
@@ -259,22 +401,79 @@ const products = [
         border-radius: 50%;
     }
 
-    /* Make product descriptions use the same bullet style */
-    .carousel-description p {
-        position: relative;
-        padding-left: 1.25rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.5;
+    /* CTA Box */
+    .cta-box {
+        background: linear-gradient(to right, #0056b3, #0077cc);
+        color: white;
+        padding: 2.5rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-    .carousel-description p:not(:empty)::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.6rem;
-        width: 6px;
-        height: 6px;
-        background-color: #0077cc;
-        border-radius: 50%;
+    .cta-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: white;
+        color: #0056b3;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+        .product-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 3rem 0;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .carousel {
+            min-height: 650px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .carousel-item {
+            padding: 1rem;
+        }
     }
 </style>
+</Layout>
