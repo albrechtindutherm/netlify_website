@@ -2,10 +2,22 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+interface SpecsItem {
+  isSpecs: true;
+}
+
+interface ProductItem {
+  image: string;
+  title: string;
+  description: string;
+}
+
+type CarouselItem = ProductItem | SpecsItem;
+
 const Products = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const products = [
+
+  const products: ProductItem[] = [
     {
       image: "/assets/image6.png",
       title: 'Reactors/Boilers for Nitric Acid Plants',
@@ -39,7 +51,7 @@ const Products = () => {
   ];
 
   // Add specs item at the beginning
-  const allItems = [
+  const allItems: CarouselItem[] = [
     { isSpecs: true },
     ...products
   ];
@@ -52,7 +64,7 @@ const Products = () => {
     setCurrentIndex((prev) => (prev - 1 + allItems.length) % allItems.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
@@ -73,14 +85,14 @@ const Products = () => {
         <div className="relative max-w-4xl mx-auto bg-background rounded-xl shadow-lg overflow-hidden border border-border">
           <div className="p-6 min-h-[500px] flex items-center justify-center">
             {allItems.map((item, idx) => (
-              <div 
+              <div
                 key={idx}
                 className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 flex items-center justify-center p-6 ${
                   currentIndex === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
               >
-                {item.isSpecs ? (
-                  <div className="w-full">
+                {'isSpecs' in item ? (
+                  <div className="w-full px-8">
                     <div className="flex items-center mb-6 text-primary">
                       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"></path><path d="M15 2v5h5"></path></svg>
                       <h3 className="text-2xl font-semibold">Typical Boiler Types and Applications</h3>
@@ -110,10 +122,10 @@ const Products = () => {
                 ) : (
                   <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="w-full md:w-1/2 h-64 md:h-80 bg-muted/20 rounded-lg overflow-hidden">
-                      <img 
-                        src={item.image} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover"
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-contain"
                         onError={(e) => {
                           e.currentTarget.src = "https://via.placeholder.com/400x300?text=Product+Image";
                         }}
@@ -129,17 +141,17 @@ const Products = () => {
             ))}
           </div>
 
-          {/* Navigation controls */}
-          <div className="absolute top-1/2 left-4 right-4 -mt-4 flex justify-between z-20">
-            <button 
-              onClick={prevSlide} 
+          {/* Navigation controls - moved further to the sides */}
+          <div className="absolute top-1/2 -translate-y-1/2 w-full px-8 flex justify-between z-20">
+            <button
+              onClick={prevSlide}
               className="p-2 rounded-full bg-background/80 backdrop-blur-sm shadow-md hover:bg-background"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
-            <button 
-              onClick={nextSlide} 
+            <button
+              onClick={nextSlide}
               className="p-2 rounded-full bg-background/80 backdrop-blur-sm shadow-md hover:bg-background"
               aria-label="Next slide"
             >
