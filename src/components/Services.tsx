@@ -73,7 +73,7 @@ const Services = () => {
                   <img 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-contain"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
